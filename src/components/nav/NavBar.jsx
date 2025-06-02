@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import Login from "../auth/Login";
 import { AuthUserContext } from "../../context/AuthContext";
 import { AppTheme } from "../../context/ThemeContext";
+import { BsLightbulbFill } from "react-icons/bs";
+import { BsLightbulb } from "react-icons/bs";
 
 function NavBar() {
   const { isLogin } = useContext(AuthUserContext);
@@ -44,7 +46,11 @@ function NavBar() {
       <div className="lastNav">
         <Login />
         <button onClick={selectTheme}>
-          {theme == "Light" ? "Light" : "Dark"}
+          {theme == "Light" ? (
+            <BsLightbulb size={15} />
+          ) : (
+            <BsLightbulbFill size={15} />
+          )}
         </button>
       </div>
     </nav>
