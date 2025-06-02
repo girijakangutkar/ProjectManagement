@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_URL =
-  "https://react-one-123a6-default-rtdb.asia-southeast1.firebasedatabase.app/projects";
+let Link = import.meta.env.VITE_DB_URI;
+const API_URL = `${Link}`;
 
 // Fetch all projects
 export const fetchProjects = () => {
